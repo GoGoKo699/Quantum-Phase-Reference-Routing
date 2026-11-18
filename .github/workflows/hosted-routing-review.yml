@@ -34,9 +34,10 @@ jobs:
           test "$(git hash-object "$RUNNER_TEMP/routing-tools/capture_hosted_math.cjs")" = 6f36ee03223a82d0075da2fe903f21bc5a45a75b
           test "$(git hash-object "$RUNNER_TEMP/routing-tools/check_rendered_math.py")" = 1d3bf9810d0dfadb844a48b354af80f9b66924bc
       - name: Install capture runtime
+        timeout-minutes: 3
         run: |
           npm install --prefix "$RUNNER_TEMP/math-runtime" playwright@1.56.1 mathjax-full@3.2.1
-          node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --with-deps chromium
+          node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --only-shell chromium
       - name: Check all rendered pages at both widths
         run: |
           export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
