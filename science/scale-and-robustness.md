@@ -43,7 +43,7 @@ For $`k`$ two-hop paths the bond probability becomes
 p_k(s)=1-2(1-s^2/4)^k+(1-s^2/2)^k .
 ```
 
-For five paths, $`p_5(s)`$ is strictly increasing on $`0<s\le1`$. Its unique root at $`p_5(s)=1/2`$ is $`s\approx0.9555985166`$. Hence this mesh percolates for flagged loss below about **4.44% per raw edge**, with otherwise ideal links and operations. Four paths stay below the threshold even at unit raw survival. This is a threshold for the specified bond-by-bond architecture.
+For five paths, $`p_5(s)`$ is strictly increasing on $`0\lt s\le1`$. Its unique root at $`p_5(s)=1/2`$ is $`s\approx0.9555985166`$. Hence this mesh percolates for flagged loss below about **4.44% per raw edge**, with otherwise ideal links and operations. Four paths stay below the threshold even at unit raw survival. This is a threshold for the specified bond-by-bond architecture.
 
 For any fixed $`s>0`$ one can choose a finite number of two-hop paths to exceed the same threshold. As $`s\to0`$, the necessary and sufficient width is $`\Theta(s^{-2})`$. For the upper bound, $`p_k(s)\ge1-2\exp(-ks^2/4)`$. For the lower bound, an open bond needs one active path each way. A union bound over ordered pairs of paths gives $`p_k(s)\le k(k-1)s^4/16`$. Increasing this width increases the number of raw modes stored at the terminals.
 
