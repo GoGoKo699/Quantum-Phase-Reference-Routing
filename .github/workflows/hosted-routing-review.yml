@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
-      CAPTURE_REVISION: 9cacb77670f83dd5147bcb03a0ed3c660a7fa7af
+      CAPTURE_REVISION: bc7172a3fe5b7077c5b39f8d171820358b891e89
     steps:
       - name: Check out the exact integrated scientific source
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
