@@ -41,7 +41,7 @@ A known sign correction on one endpoint mode per path removes the product of tho
 |S\rangle_A\,|\overline{S}\rangle_B .
 ```
 
-Here $`|S\rangle`$ denotes the occupation pattern with exactly the modes in $`S`$ occupied. The phase $`K\phi_A+(r-K)\phi_B`$ is common to every term and has no effect. If $`K=0`$ or $`K=r`$, the state is a product. If $`0<K<r`$, it has uniform Schmidt rank at least two and yields an exact encoded Bell pair deterministically by the next step. The entire protocol succeeds exactly on the sectors containing some active orientation in each direction. The success probability therefore equals the upper bound.
+Here $`|S\rangle`$ denotes the occupation pattern with exactly the modes in $`S`$ occupied. The phase $`K\phi_A+(r-K)\phi_B`$ is common to every term and has no effect. If $`K=0`$ or $`K=r`$, the state is a product. If $`0\lt K\lt r`$, it has uniform Schmidt rank at least two and yields an exact encoded Bell pair deterministically by the next step. The entire protocol succeeds exactly on the sectors containing some active orientation in each direction. The success probability therefore equals the upper bound.
 
 ### A charge-preserving endpoint measurement
 
