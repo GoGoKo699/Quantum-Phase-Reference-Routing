@@ -1,0 +1,55 @@
+name: Verify hosted routing mathematics
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'merlin/hosted-routing-review'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      CAPTURE_REVISION: 9cacb77670f83dd5147bcb03a0ed3c660a7fa7af
+    steps:
+      - name: Check out the exact integrated scientific source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.CAPTURE_REVISION }}
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Verify public checker sources
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/routing-tools"
+          tools=https://raw.githubusercontent.com/GoGoKo699/Quantum-Dark-Direction-Receiver/1a8e28f91a51437bfc24bcbf9448c83034c2cccf/verification/hosted_math
+          curl -fsSL "$tools/capture_hosted_math.cjs" -o "$RUNNER_TEMP/routing-tools/capture_hosted_math.cjs"
+          curl -fsSL "$tools/check_rendered_math.py" -o "$RUNNER_TEMP/routing-tools/check_rendered_math.py"
+          test "$(git hash-object "$RUNNER_TEMP/routing-tools/capture_hosted_math.cjs")" = 6f36ee03223a82d0075da2fe903f21bc5a45a75b
+          test "$(git hash-object "$RUNNER_TEMP/routing-tools/check_rendered_math.py")" = 1d3bf9810d0dfadb844a48b354af80f9b66924bc
+      - name: Install capture runtime
+        run: |
+          npm install --prefix "$RUNNER_TEMP/math-runtime" playwright@1.56.1 mathjax-full@3.2.1
+          node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Check all rendered pages at both widths
+        run: |
+          export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
+          node "$RUNNER_TEMP/routing-tools/capture_hosted_math.cjs" \
+            --root "$GITHUB_WORKSPACE" \
+            --repository "$GITHUB_REPOSITORY" \
+            --revision "$CAPTURE_REVISION" \
+            --output "$RUNNER_TEMP/hosted-math"
+      - name: Retain the actual review output
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hosted-math-${{ env.CAPTURE_REVISION }}
+          path: ${{ runner.temp }}/hosted-math
+          if-no-files-found: error
+          retention-days: 7
