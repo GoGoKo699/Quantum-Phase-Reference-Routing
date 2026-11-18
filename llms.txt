@@ -1,0 +1,11 @@
+# Quantum Phase Reference Routing
+
+> Exact one-batch routing of a heralded encoded Bell pair from single-excitation links under common local phase uncertainty.
+
+- [Question, assumptions and output](science/model.md)
+- [Charge sectors, graph converse and localizability](science/graph.md)
+- [Optimal parallel-path receiver](science/parallel-paths.md)
+- [Scalable architecture and noise limits](science/scale-and-robustness.md)
+- [Closest prior work](references/RELATED_WORK.md)
+- [Finite calculation checks](verification/README.md)
+- [Learning route](learning/README.md)
