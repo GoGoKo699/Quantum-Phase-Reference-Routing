@@ -2,7 +2,7 @@
 
 Stephen D. Bartlett, Terry Rudolph and Robert W. Spekkens, *Reference frames, superselection rules, and quantum information*, **Reviews of Modern Physics 79**, 555–609 (2007). [Journal record](https://doi.org/10.1103/RevModPhys.79.555) · [arXiv v3](https://arxiv.org/abs/quant-ph/0610030v3).
 
-| Review section | What it supplies for the five-path bond |
+| Review section | What it supplies for the network |
 | --- | --- |
 | II.B–C | Turning an unknown phase into an average over phase rotations and identifying the sectors that survive |
 | III.A.1 | Encoding a qubit in the location of one excitation across two local modes |
@@ -23,6 +23,10 @@ Place five independent two-hop paths between Alice and Bob. Each path has one in
 
 Alice and Bob pool these outputs and read their total counts. A sector with at least one active excitation at each endpoint has two or more coherent placements. A local measurement and decoding extract a dual-rail Bell pair. This is where the review's activation mechanism becomes a routing protocol. The [parallel-path proof](../science/parallel-paths.md) counts these favorable sectors and proves optimality. The [graph proof](../science/graph.md) describes the general obstruction. The [lattice construction](../science/scale-and-robustness.md) uses many successfully activated bonds as well as the classical messages needed to find and connect them.
 
-The review supplies the phase and encoding foundations. The network's routing theorem, exact pooled success probability and lattice construction follow from the project proofs. The [scientific account](../science/README.md) points to those arguments and their attribution.
+## From charge sectors to larger graphs
+
+Section III.C.3 lets us ask how much entanglement a fixed number sector retains across a given partition. In the companion valence problem each color class can bring its modes together and distill across the color cut. In the routing problem every vertex still acts as a separate laboratory. A charge sector can preserve enough coherence for an exact Bell pair and still give the local circuit only a small chance of extracting it. The [degree-four comparison](../science/degree-four-routing.md) uses these two access rules on the same state. Its random-network result counts eligible sectors, and its graph-chosen cycle protocol gives a separate lower bound on actual success. [Companion project · Entanglement Valence Threshold](https://github.com/GoGoKo699/Entanglement-Valence-Threshold)
+
+The review supplies the phase and encoding foundations. The graph criteria, exact pooled success law, lattice construction and sparse-network results follow from the project proofs. The [scientific account](../science/README.md) points to those arguments and their attribution.
 
 [Start at M01](MILESTONES.md#m01-an-excitation-on-one-link) · [Learning route](README.md)

@@ -6,6 +6,8 @@
 - [Charge sectors, graph converse and localizability](science/graph.md)
 - [Optimal parallel-path receiver](science/parallel-paths.md)
 - [Scalable architecture and noise limits](science/scale-and-robustness.md)
+- [Sector availability and routing on random four-regular graphs](science/degree-four-routing.md)
+- [Charge-adaptive circuits, restrictions and finite bounds](science/charge-adaptive-routing.md)
 - [Closest prior work](references/RELATED_WORK.md)
 - [Finite calculation checks](verification/README.md)
 - [Learning route](learning/README.md)

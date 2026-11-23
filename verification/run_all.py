@@ -3,6 +3,8 @@ from fractions import Fraction
 from itertools import combinations, product
 from math import prod
 
+from k44 import check_k44
+
 
 def charge_sectors(edges, vertices):
     sectors = defaultdict(list)
@@ -151,3 +153,4 @@ if __name__ == '__main__':
     print('endpoint pooling charge sectors verified:', check_pooling_measurements())
     check_mesh_and_decoder()
     print('mesh threshold and four repetition decoders verified')
+    check_k44()

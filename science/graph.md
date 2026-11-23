@@ -69,4 +69,4 @@ That probability is achievable under separate local operations. At $`U`$, projec
 
 In any orientation where $`A,B`$ share a strongly connected component, both must have indegree one, and $`U,V`$ must also be in the component as the two neighbors of $`A`$. Their degrees are three, so their indegrees must be one or two, summing to three. The only sectors to count are thus $`(2,1,1,1)`$ and its reversal $`(1,2,1,1)`$. Each sector has weight $`3/32`$ and conditional optimum $`2/3`$. The graph criterion gives an unconditional upper bound of $`3/16`$ while the exact optimal success probability is $`1/8`$.
 
-[Continue to the exact parallel-path result](parallel-paths.md).
+[Exact parallel-path result](parallel-paths.md) · [An explicit circuit in every eligible sector](charge-adaptive-routing.md#extracting-a-pair-from-two-orientations) · [Random four-regular graphs](degree-four-routing.md)
