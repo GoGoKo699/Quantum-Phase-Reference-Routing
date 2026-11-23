@@ -2,11 +2,12 @@
 
 A four-regular graph supplies four raw half-link modes per node. Can an ideal one-batch protocol use those modes to deliver an exact encoded Bell pair between distant, specified terminals? We consider uniformly random simple four-regular bipartite graphs with $`n`$ labeled vertices per color. Choose distinct terminals $`A,B`$ uniformly from one color class before the batch. By label symmetry, the same distribution of success probabilities holds for any two fixed distinct labels in that class.
 
-The [graph criterion](graph.md#conditional-graph-criterion) identifies the charge records where local extraction is possible with positive probability. Draw a fair independent orientation $`\omega`$ to sample the law of the charge record. Define
+The [graph criterion](graph.md#conditional-graph-criterion) identifies the charge records where local extraction is possible with positive probability. Draw a fair independent orientation $`\omega`$ to sample the law of the charge record. Write SCC for a strongly connected component and define
 ```math
-Q_n(G;A,B)=\Pr_\omega(A,B\text{ lie in the same strongly connected component}),
-\qquad
-P^*(G;A,B)\leq Q_n(G;A,B).
+\begin{aligned}
+Q_n(G;A,B)&=\Pr_\omega(A,B\text{ share an SCC}),\\
+P^*(G;A,B)&\leq Q_n(G;A,B).
+\end{aligned}
 ```
 The orientation is an analysis variable. The protocol has the supplied graph, the charge record and its own measurement outcomes.
 
