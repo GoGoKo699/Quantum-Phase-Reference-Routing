@@ -1,6 +1,6 @@
 # Thirty milestones for phase-reference-independent routing
 
-Alice and Bob want a usable Bell pair across one bond of a square lattice. Five paths connect them. Each has two links and its own intermediate helper. Start with the physical occupation pattern on one link. End with a square lattice built from that same gadget.
+Alice and Bob want a usable Bell pair across one bond of a square lattice. Five paths connect them. Each has two links and its own intermediate helper. Start with the physical occupation pattern on one link. Build a square lattice from that gadget, and compare its guarantee with routing on sparse four-regular graphs.
 
 Each station has a shared understanding target and one practice question. Open the feedback after choosing one of the four answers. Earlier milestones establish the route's conceptual dependencies. The Revise and Learn paragraphs also give enough information to reason through each question on its own.
 
@@ -546,21 +546,21 @@ Each station has a shared understanding target and one practice question. Open t
 
 **Learn.** When the endpoints are in different components, the fixed-charge state factors over those components and they cannot share an exact Bell output. Being in the same component allows a positive-probability extraction, while the probability within that sector can depend on its amplitudes and local filters.
 
-**Test.** The designer attaches new paths that overlap in their intermediate vertices. What can be stated if Alice and Bob share a component for 60% of sectors by probability?
+**Test.** On large random four-regular bipartite graphs, the sectors where Alice and Bob share a component carry about 50.6% of the probability. What does that establish?
 
-- **A.** The upper bound is 60%, and the parallel-path equality needs a separate attainability argument.
-- **B.** The exact success probability is 60% because every connected sector gives a pair with certainty.
-- **C.** The protocol is impossible because there is a shared intermediate vertex.
-- **D.** The success probability must exceed 60% if enough local filters are allowed.
+- **A.** The value gives an asymptotic ceiling. Attaining it needs a separate argument about operations within each eligible sector.
+- **B.** Every eligible sector yields an exact pair with certainty, so the value is the optimal success probability.
+- **C.** Every sector becomes ineligible as soon as two paths share an intermediate vertex.
+- **D.** Adding enough local filters makes ineligible sectors contribute to exact Bell successes.
 
 <details>
 <summary>Check your answer</summary>
 
-**A.** Sectors with separated endpoints cannot contribute to success. Shared-component sectors may contribute less than their full probability.
+**A.** Sectors with separated endpoints cannot contribute to success. The example gives an exact limit for sector eligibility and leaves the optimal probability of actually obtaining a Bell pair open.
 
 </details>
 
-[Source · Graph and charge-sector proofs](../science/graph.md) · [Builds on M22](#m22-pooling-versus-reserving-pairs-in-advance)
+[Source · Graph and charge-sector proofs](../science/graph.md) · [Random four-regular result](../science/degree-four-routing.md#probability-of-an-eligible-sector) · [Builds on M22](#m22-pooling-versus-reserving-pairs-in-advance)
 
 ### M24 Why a bridge still blocks routing
 
@@ -568,7 +568,7 @@ Each station has a shared understanding target and one practice question. Open t
 
 **Revise.** A bridge is an edge whose removal disconnects the graph. If it is the only connection between two pieces, the total charge on one side fixes its orientation in each sector.
 
-**Learn.** Local operations and classical messages cannot bridge a product cut. Cyclic structures within a piece can still activate entanglement among labs in that piece.
+**Learn.** Local operations and classical messages cannot bridge a product cut. Cyclic structures within a piece can still activate entanglement among labs in that piece. With two crossing edges, one edge must point each way for the weak boundary to admit routing. A chain of such boundaries can retain extensive entanglement across the color cut while its distant terminal routing probability decreases exponentially.
 
 **Test.** Two five-path bonds are installed in separate regions and joined by one raw edge. Alice is in the first and Bob in the second. What changes if the designer doubles the number of local paths in each region but leaves the single connecting edge?
 
@@ -584,7 +584,7 @@ Each station has a shared understanding target and one practice question. Open t
 
 </details>
 
-[Source · Graph and charge-sector proofs](../science/graph.md) · [Builds on M23](#m23-shared-components-and-the-wider-graph-question)
+[Source · Graph and charge-sector proofs](../science/graph.md) · [Separation example](../science/degree-four-routing.md#a-separation-from-color-coalition-entanglement) · [Builds on M23](#m23-shared-components-and-the-wider-graph-question)
 
 ### M25 Turn one gadget into a lattice bond
 
@@ -712,7 +712,7 @@ Each station has a shared understanding target and one practice question. Open t
 
 **Revise.** The quarter-direction records of ideal two-hop paths give a five-path Bell herald with probability $`285/512`$. The lattice then uses classical connectivity and local encoded swaps. The input gives one single-excitation state per edge, with a common unknown phase at each node.
 
-**Learn.** Independent differential phase errors can leave the flags unchanged while reducing the fidelity after a long sequence of swaps. With ideal encoded operations and storage, a separate protocol collects several independent copies per bond and removes most phase errors before swapping. Repeating batches and storing accepted copies cost extra resources.
+**Learn.** Independent differential phase errors can leave the flags unchanged while reducing the fidelity after a long sequence of swaps. With ideal encoded operations and storage, a separate protocol collects several independent copies per bond and removes most phase errors before swapping. Repeating batches and storing accepted copies cost extra resources. A different graph ensemble, with four supplied modes per vertex, has an inverse-polynomial one-batch lower bound. The constant success guarantee for the mesh uses the five-path bond construction.
 
 **Test.** Which scientific claim is supported by the complete worked example?
 
@@ -728,6 +728,6 @@ Each station has a shared understanding target and one practice question. Open t
 
 </details>
 
-[Source · Scale and robustness](../science/scale-and-robustness.md) · [Builds on M29](#m29-common-phase-and-differential-phase)
+[Source · Scale and robustness](../science/scale-and-robustness.md) · [Random-graph comparison](../science/degree-four-routing.md#a-local-protocol-with-inverse-polynomial-success) · [Builds on M29](#m29-common-phase-and-differential-phase)
 
 [Return to the learning route](README.md)

@@ -4,5 +4,7 @@
 2. [Graph criterion and converse](graph.md) identifies the charge sectors that can support end-to-end extraction and bounds their success probability.
 3. [Parallel-path protocol](parallel-paths.md) gives a local instrument, an exact optimum, and the width required for long parallel routes.
 4. [Architecture and robustness](scale-and-robustness.md) uses the optimal primitive in a bounded-degree network and quantifies its limits under loss and phase error.
+5. [Random four-regular graphs](degree-four-routing.md) determines the limiting weight of eligible sectors, gives a local inverse-polynomial protocol and separates individual routing from color-coalition entanglement.
+6. [Charge-adaptive extraction](charge-adaptive-routing.md) gives a circuit for each eligible sector, a restricted-measurement bound and finite protocols for the complete bipartite graph.
 
 Follow the [related-work account](../references/RELATED_WORK.md) for inherited tools and [verification](../verification/README.md) for executable finite checks.
